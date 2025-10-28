@@ -48,14 +48,13 @@
 <body class="bg-slate-100 min-h-screen antialiased">
 
   <div class="max-w-7xl mx-auto p-4 sm:p-8">
-
     <!-- Header Section -->
-    <header class="bg-white rounded-xl shadow-lg p-8 mb-8 sm:mb-12 text-center">
+    <header class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 sm:mb-12 text-center">
       <h1
-        class="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-3">
+        class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-3">
         🚀 Career Accelerator
       </h1>
-      <p class="text-lg sm:text-xl text-slate-600">
+      <p class="text-base sm:text-lg md:text-xl text-slate-600">
         Your personal playbook for professional growth.
       </p>
     </header>
@@ -128,39 +127,42 @@
     <!-- Common Pathways Section -->
     <section id="common-pathways" class="mt-12">
       <div class="bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-8 text-center">
           🗺️ Common Career Pathways
         </h2>
         <div class="space-y-10">
 
           <!-- Pathway 1: Software Engineer -->
           <div id="software-engineer-pathway">
-            <h3 class="text-2xl font-semibold text-blue-700 mb-4">Software Engineer</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-blue-700 mb-4">Software Engineer</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
 
               <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Foundation</p>
                   <p class="text-sm text-slate-500">Graduate from Community College &rarr; 4-year university.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Build Portfolio</p>
                   <p class="text-sm text-slate-500">Add personal projects to an online portfolio (e.g., GitHub).</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Gain Experience</p>
                   <p class="text-sm text-slate-500">Secure internships or entry-level roles to apply skills.</p>
@@ -168,7 +170,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     🚀</div>
                   <p class="font-semibold text-slate-700">Get Hired</p>
                   <p class="text-sm text-slate-500">Leverage portfolio and experience to land a full-time tech job.</p>
@@ -179,7 +181,7 @@
 
           <!-- Pathway 2: Entrepreneur Pathway -->
           <div id="business-entrepreneur-pathway">
-            <h3 class="text-2xl font-semibold text-amber-700 mb-4">Entrepreneur</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-amber-700 mb-4">Entrepreneur</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
@@ -187,36 +189,40 @@
               <!-- Using 5 columns for this pathway -->
               <div class="relative grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Interdisciplinary Study</p>
                   <p class="text-sm text-slate-500">Study Business & Coding in a 4-year program to understand
                     automation.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Build a Venture</p>
                   <p class="text-sm text-slate-500">Start a business/non-profit focused on gaining skills, not just
                     profit.</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Leverage Skills</p>
                   <p class="text-sm text-slate-500">Transfer skills to enterprise roles while earning passive income
                     from your venture.</p>
                 </div>
                 <!-- Step 4 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     4</div>
                   <p class="font-semibold text-slate-700">Build Your Brand</p>
                   <p class="text-sm text-slate-500">Use public speaking and social outreach to maintain your personal
@@ -225,7 +231,7 @@
                 <!-- Step 5 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     💼</div>
                   <p class="font-semibold text-slate-700">Become the Brand</p>
                   <p class="text-sm text-slate-500">Embody your business and brand, establishing yourself as a leader.
@@ -237,33 +243,36 @@
 
           <!-- Pathway 3: Cybersecurity Engineer -->
           <div id="cybersecurity-engineer-pathway">
-            <h3 class="text-2xl font-semibold text-red-700 mb-4">Cybersecurity Engineer</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-red-700 mb-4">Cybersecurity Engineer</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
               <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Foundation</p>
                   <p class="text-sm text-slate-500">Earn a degree in IT/CS and get foundational certs (e.g., Security+).
                   </p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Entry-Level IT</p>
                   <p class="text-sm text-slate-500">Start in a role like Help Desk or Network Admin to build core
                     skills.</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Specialize</p>
                   <p class="text-sm text-slate-500">Pivot to a security-focused role like a Security Analyst.</p>
@@ -271,7 +280,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     🛡️</div>
                   <p class="font-semibold text-slate-700">Get Hired</p>
                   <p class="text-sm text-slate-500">Land a Cybersecurity Engineer role and pursue advanced certs
@@ -283,32 +292,35 @@
 
           <!-- Pathway 4: UI Designer -->
           <div id="ui-designer-pathway">
-            <h3 class="text-2xl font-semibold text-purple-700 mb-4">UI Designer</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-purple-700 mb-4">UI Designer</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
               <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Learn Fundamentals</p>
                   <p class="text-sm text-slate-500">Study design principles and master tools like Figma or Adobe XD.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Build Portfolio</p>
                   <p class="text-sm text-slate-500">Create a strong online portfolio with diverse UI design projects.
                   </p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Gain Experience</p>
                   <p class="text-sm text-slate-500">Take on freelance work, internships, or volunteer projects.</p>
@@ -316,7 +328,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     🎨</div>
                   <p class="font-semibold text-slate-700">Get Hired</p>
                   <p class="text-sm text-slate-500">Use your portfolio and experience to secure a full-time UI role.</p>
@@ -327,33 +339,36 @@
 
           <!-- Pathway 5: Civil Servant -->
           <div id="civil-servant-pathway">
-            <h3 class="text-2xl font-semibold text-teal-700 mb-4">Civil Servant</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-teal-700 mb-4">Civil Servant</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
               <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Research</p>
                   <p class="text-sm text-slate-500">Identify target agencies (local, state, federal) and role
                     requirements.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Find Openings</p>
                   <p class="text-sm text-slate-500">Monitor official job portals like USAJOBS or state/city websites.
                   </p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Apply & Test</p>
                   <p class="text-sm text-slate-500">Submit detailed applications and pass any required civil service
@@ -362,7 +377,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     🏛️</div>
                   <p class="font-semibold text-slate-700">Get Hired</p>
                   <p class="text-sm text-slate-500">Pass interviews and clearance to secure a government position.</p>
@@ -373,32 +388,35 @@
 
           <!-- Pathway 6: Nurse -->
           <div id="nurse-pathway">
-            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Nurse</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-sky-700 mb-4">Nurse</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
               <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Education</p>
                   <p class="text-sm text-slate-500">Earn an Associate's Degree in Nursing (ADN) or Bachelor of Science
                     in Nursing (BSN).</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Licensure</p>
                   <p class="text-sm text-slate-500">Pass the NCLEX-RN exam to become a Registered Nurse (RN).</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Gain Experience</p>
                   <p class="text-sm text-slate-500">Work in various specialties (e.g., med-surg, ICU, pediatrics) to
@@ -407,7 +425,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     🩺</div>
                   <p class="font-semibold text-slate-700">Specialize/Advance</p>
                   <p class="text-sm text-slate-500">Pursue advanced certifications or a Master's degree (MSN) for
@@ -419,32 +437,35 @@
 
           <!-- Pathway 7: Doctor -->
           <div id="doctor-pathway">
-            <h3 class="text-2xl font-semibold text-emerald-700 mb-4">Doctor</h3>
+            <h3 class="text-xl sm:text-2xl font-semibold text-emerald-700 mb-4">Doctor</h3>
             <div class="relative">
               <!-- Connector line for larger screens -->
               <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
               <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     1</div>
                   <p class="font-semibold text-slate-700">Pre-Med Education</p>
                   <p class="text-sm text-slate-500">Complete a Bachelor's degree with pre-med coursework.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     2</div>
                   <p class="font-semibold text-slate-700">Medical School</p>
                   <p class="text-sm text-slate-500">Earn a Doctor of Medicine (MD) or Doctor of Osteopathic Medicine
                     (DO) degree.</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="flex flex-col items-center">
+                <div class="flex flex-col items-center relative">
+                  <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
                   <div
-                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     3</div>
                   <p class="font-semibold text-slate-700">Residency</p>
                   <p class="text-sm text-slate-500">Complete a specialized residency program (3-7 years).</p>
@@ -452,7 +473,7 @@
                 <!-- Step 4 -->
                 <div class="flex flex-col items-center">
                   <div
-                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                     ⚕️</div>
                   <p class="font-semibold text-slate-700">Licensure & Practice</p>
                   <p class="text-sm text-slate-500">Obtain state medical license and begin practicing, potentially
@@ -469,7 +490,7 @@
     <!-- Pivoting After a Layoff Section -->
     <section id="layoff-pivot-pathways" class="mt-12">
       <div class="bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-8 text-center">
           🔄 Pivoting After a Layoff: A 4-Step Guide to Get Back on Your Feet
         </h2>
         <div class="relative">
@@ -478,27 +499,30 @@
 
           <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <!-- Step 1: Reflect & Recharge -->
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center relative">
+              <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
               <div
-                class="w-16 h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                class="w-14 h-14 sm:w-16 sm:h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                 1</div>
               <p class="font-semibold text-slate-700">Reflect & Recharge</p>
               <p class="text-sm text-slate-500">Take time to process the layoff. Update your resume, assess your
                 finances, and focus on your well-being before jumping into a job search.</p>
             </div>
             <!-- Step 2: Rebrand & Reskill -->
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center relative">
+              <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
               <div
-                class="w-16 h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                class="w-14 h-14 sm:w-16 sm:h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                 2</div>
               <p class="font-semibold text-slate-700">Rebrand & Reskill</p>
               <p class="text-sm text-slate-500">Identify your core skills and areas for growth. Update your LinkedIn,
                 tailor your resume, and consider learning a new skill or earning a certification.</p>
             </div>
             <!-- Step 3: Network & Search -->
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center relative">
+              <div class="md:hidden absolute top-16 left-1/2 w-0.5 h-full bg-slate-200 -translate-x-1/2"></div>
               <div
-                class="w-16 h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                class="w-14 h-14 sm:w-16 sm:h-16 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                 3</div>
               <p class="font-semibold text-slate-700">Network & Search</p>
               <p class="text-sm text-slate-500">Reach out to your professional network for informational interviews.
@@ -507,7 +531,7 @@
             <!-- Step 4: Relaunch Your Career -->
             <div class="flex flex-col items-center">
               <div
-                class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                class="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow z-10">
                 🚀</div>
               <p class="font-semibold text-slate-700">Relaunch Your Career</p>
               <p class="text-sm text-slate-500">Leverage your refreshed brand and new skills to land a role that aligns
@@ -521,20 +545,20 @@
     <!-- Post-Retirement Pathways Section -->
     <section id="post-retirement-pathways" class="mt-12">
       <div class="bg-white rounded-xl shadow-lg p-8">
-        <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-8 text-center">
           🌱 Planning for What's Next: Post-Retirement Careers
         </h2>
         <div class="space-y-8 max-w-4xl mx-auto text-slate-600">
 
           <div>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">Software Engineer: The Mentor & Architect</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-700 mb-2">Software Engineer: The Mentor & Architect</h3>
             <p>Leverage decades of experience by transitioning into part-time consulting, mentoring startups, or
               teaching at a coding bootcamp. Many retired engineers find fulfillment contributing to open-source
               projects or building niche software products without the pressure of deadlines.</p>
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold text-amber-700 mb-2">Entrepreneur: The Advisor & Investor</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-amber-700 mb-2">Entrepreneur: The Advisor & Investor</h3>
             <p>A successful business requires a solid exit strategy. This is your retirement plan. Options include
               selling the company, passing it to the next generation (succession planning), or transitioning it into a
               source of passive income. Post-retirement, you can serve as a board advisor, angel investor, or mentor for
@@ -542,14 +566,14 @@
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold text-red-700 mb-2">Cybersecurity Engineer: The Digital Guardian</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-red-700 mb-2">Cybersecurity Engineer: The Digital Guardian</h3>
             <p>The need for security expertise never fades. Seasoned professionals can work as virtual CISOs (Chief
               Information Security Officers) for smaller companies, conduct security audits, or develop training
               programs. This provides a flexible way to keep skills sharp and protect organizations.</p>
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold text-purple-700 mb-2">UI Designer: The Creative Consultant</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-purple-700 mb-2">UI Designer: The Creative Consultant</h3>
             <p>Experienced designers are valued for their strategic eye. Post-retirement roles often involve freelance
               consulting on high-level design strategy, mentoring junior designers, or creating and selling digital
               assets like UI kits and templates. This allows for continued creative expression with greater autonomy.
@@ -557,21 +581,21 @@
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold text-teal-700 mb-2">Civil Servant: The Community Leader</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-teal-700 mb-2">Civil Servant: The Community Leader</h3>
             <p>A career in public service builds a deep understanding of community needs. Many retired civil servants
               continue to serve by running for local office, joining non-profit boards, or consulting for government
               contractors. This path allows you to leverage your institutional knowledge for public good.</p>
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold text-sky-700 mb-2">Nurse: The Care Consultant</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-sky-700 mb-2">Nurse: The Care Consultant</h3>
             <p>Leverage decades of patient care experience by transitioning to part-time health consulting, patient
               advocacy, or teaching nursing students. Many retired nurses find fulfillment in community health
               initiatives, medical writing, or volunteering their expertise.</p>
           </div>
 
           <div>
-            <h3 class="text-xl font-semibold text-emerald-700 mb-2">Doctor: The Medical Sage</h3>
+            <h3 class="text-lg sm:text-xl font-semibold text-emerald-700 mb-2">Doctor: The Medical Sage</h3>
             <p>Offer invaluable medical expertise as a consultant, serve on hospital or medical association boards, or
               engage in medical research. Many doctors transition to teaching, writing medical articles, or volunteering
               in underserved communities, continuing to impact health without the full-time demands of practice.</p>
@@ -583,7 +607,7 @@
     </section>
 
     <!-- Disclaimer Section -->
-    <footer class="mt-12 py-6 text-center text-slate-500 text-sm">
+    <footer class="mt-12 py-6 px-4 text-center text-slate-500 text-sm">
       <p>
         <strong>Disclaimer:</strong> The career tips provided on this platform are for informational purposes only and
         do not constitute professional advice.
