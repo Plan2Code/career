@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Tips | Plan2Code</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- 1. Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Load a modern font (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 3. Configure Tailwind to use the Inter font -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- 4. Add a few custom styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Add a smooth transition for the cards */
+    .tip-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 min-h-screen antialiased">
+
+  <div class="max-w-7xl mx-auto p-4 sm:p-8">
+
+    <!-- Header Section -->
+    <header class="bg-white rounded-xl shadow-lg p-8 mb-8 sm:mb-12 text-center">
+      <h1
+        class="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-3">
+        🚀 Career Accelerator
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-600">
+        Your personal playbook for professional growth.
+      </p>
+    </header>
+
+    <!-- Navigation to Pathways -->
+    <nav class="mb-8 p-6 bg-white rounded-xl shadow-lg">
+      <h3 class="text-lg font-semibold text-slate-800 mb-4 text-center md:text-left">
+        Jump to a Career Pathway:
+      </h3>
+      <div class="flex flex-wrap justify-center md:justify-start gap-3">
+        <a href="#software-engineer-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors">Software
+          Engineer</a>
+        <a href="#business-entrepreneur-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">Entrepreneur</a>
+        <a href="#cybersecurity-engineer-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-red-100 text-red-700 hover:bg-red-200 transition-colors">Cybersecurity
+          Engineer</a>
+        <a href="#ui-designer-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors">UI
+          Designer</a>
+        <a href="#civil-servant-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-teal-100 text-teal-700 hover:bg-teal-200 transition-colors">Civil
+          Servant</a>
+        <a href="#nurse-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-sky-100 text-sky-700 hover:bg-sky-200 transition-colors">Nurse</a>
+        <a href="#doctor-pathway"
+          class="px-4 py-2 rounded-full text-sm font-medium bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-colors">Doctor</a>
+      </div>
+    </nav>
+
+    <!-- Filter and Search Controls -->
+    <div class="mb-8 p-6 bg-white rounded-xl shadow-lg">
+      <div class="flex flex-col md:flex-row gap-6">
+
+        <!-- Search Input -->
+        <div class="flex-grow">
+          <label for="search-input" class="block text-sm font-medium text-slate-700 mb-2">
+            🔍 Search Tips
+          </label>
+          <input type="text" id="search-input" placeholder="Search by keyword..."
+            class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" />
+        </div>
+
+        <!-- Category Filters (Container for JS) -->
+        <div class="md:w-auto">
+          <label class="block text-sm font-medium text-slate-700 mb-2">
+            📋 Filter by Category
+          </label>
+          <div id="category-filters" class="flex flex-wrap gap-2">
+            <!-- Filter buttons will be injected here by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips Grid (Container for JS) -->
+    <main id="tips-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tip cards will be injected here by JavaScript -->
+    </main>
+
+    <!-- "No Results" Message (hidden by default) -->
+    <div id="no-results" class="text-center py-16 px-6 bg-white rounded-xl shadow-lg hidden">
+      <h3 class="text-2xl font-semibold text-slate-700 mb-4">😔 No Tips Found</h3>
+      <p class="text-slate-500">
+        Try adjusting your search term or clearing the category filter.
+      </p>
+    </div>
+
+    <!-- Common Pathways Section -->
+    <section id="common-pathways" class="mt-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">
+          🗺️ Common Career Pathways
+        </h2>
+        <div class="space-y-10">
+
+          <!-- Pathway 1: Software Engineer -->
+          <div id="software-engineer-pathway">
+            <h3 class="text-2xl font-semibold text-blue-700 mb-4">Software Engineer</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+
+              <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Foundation</p>
+                  <p class="text-sm text-slate-500">Graduate from Community College &rarr; 4-year university.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Build Portfolio</p>
+                  <p class="text-sm text-slate-500">Add personal projects to an online portfolio (e.g., GitHub).</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Gain Experience</p>
+                  <p class="text-sm text-slate-500">Secure internships or entry-level roles to apply skills.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    🚀</div>
+                  <p class="font-semibold text-slate-700">Get Hired</p>
+                  <p class="text-sm text-slate-500">Leverage portfolio and experience to land a full-time tech job.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pathway 2: Entrepreneur Pathway -->
+          <div id="business-entrepreneur-pathway">
+            <h3 class="text-2xl font-semibold text-amber-700 mb-4">Entrepreneur</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+
+              <!-- Using 5 columns for this pathway -->
+              <div class="relative grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Interdisciplinary Study</p>
+                  <p class="text-sm text-slate-500">Study Business & Coding in a 4-year program to understand
+                    automation.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Build a Venture</p>
+                  <p class="text-sm text-slate-500">Start a business/non-profit focused on gaining skills, not just
+                    profit.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Leverage Skills</p>
+                  <p class="text-sm text-slate-500">Transfer skills to enterprise roles while earning passive income
+                    from your venture.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    4</div>
+                  <p class="font-semibold text-slate-700">Build Your Brand</p>
+                  <p class="text-sm text-slate-500">Use public speaking and social outreach to maintain your personal
+                    brand.</p>
+                </div>
+                <!-- Step 5 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    💼</div>
+                  <p class="font-semibold text-slate-700">Become the Brand</p>
+                  <p class="text-sm text-slate-500">Embody your business and brand, establishing yourself as a leader.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pathway 3: Cybersecurity Engineer -->
+          <div id="cybersecurity-engineer-pathway">
+            <h3 class="text-2xl font-semibold text-red-700 mb-4">Cybersecurity Engineer</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+              <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Foundation</p>
+                  <p class="text-sm text-slate-500">Earn a degree in IT/CS and get foundational certs (e.g., Security+).
+                  </p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Entry-Level IT</p>
+                  <p class="text-sm text-slate-500">Start in a role like Help Desk or Network Admin to build core
+                    skills.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Specialize</p>
+                  <p class="text-sm text-slate-500">Pivot to a security-focused role like a Security Analyst.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    🛡️</div>
+                  <p class="font-semibold text-slate-700">Get Hired</p>
+                  <p class="text-sm text-slate-500">Land a Cybersecurity Engineer role and pursue advanced certs
+                    (CISSP).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pathway 4: UI Designer -->
+          <div id="ui-designer-pathway">
+            <h3 class="text-2xl font-semibold text-purple-700 mb-4">UI Designer</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+              <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Learn Fundamentals</p>
+                  <p class="text-sm text-slate-500">Study design principles and master tools like Figma or Adobe XD.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Build Portfolio</p>
+                  <p class="text-sm text-slate-500">Create a strong online portfolio with diverse UI design projects.
+                  </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Gain Experience</p>
+                  <p class="text-sm text-slate-500">Take on freelance work, internships, or volunteer projects.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    🎨</div>
+                  <p class="font-semibold text-slate-700">Get Hired</p>
+                  <p class="text-sm text-slate-500">Use your portfolio and experience to secure a full-time UI role.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pathway 5: Civil Servant -->
+          <div id="civil-servant-pathway">
+            <h3 class="text-2xl font-semibold text-teal-700 mb-4">Civil Servant</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+              <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Research</p>
+                  <p class="text-sm text-slate-500">Identify target agencies (local, state, federal) and role
+                    requirements.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Find Openings</p>
+                  <p class="text-sm text-slate-500">Monitor official job portals like USAJOBS or state/city websites.
+                  </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Apply & Test</p>
+                  <p class="text-sm text-slate-500">Submit detailed applications and pass any required civil service
+                    exams.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    🏛️</div>
+                  <p class="font-semibold text-slate-700">Get Hired</p>
+                  <p class="text-sm text-slate-500">Pass interviews and clearance to secure a government position.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pathway 6: Nurse -->
+          <div id="nurse-pathway">
+            <h3 class="text-2xl font-semibold text-sky-700 mb-4">Nurse</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+              <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Education</p>
+                  <p class="text-sm text-slate-500">Earn an Associate's Degree in Nursing (ADN) or Bachelor of Science
+                    in Nursing (BSN).</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Licensure</p>
+                  <p class="text-sm text-slate-500">Pass the NCLEX-RN exam to become a Registered Nurse (RN).</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-sky-100 text-sky-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Gain Experience</p>
+                  <p class="text-sm text-slate-500">Work in various specialties (e.g., med-surg, ICU, pediatrics) to
+                    build skills.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    🩺</div>
+                  <p class="font-semibold text-slate-700">Specialize/Advance</p>
+                  <p class="text-sm text-slate-500">Pursue advanced certifications or a Master's degree (MSN) for
+                    specialized roles.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pathway 7: Doctor -->
+          <div id="doctor-pathway">
+            <h3 class="text-2xl font-semibold text-emerald-700 mb-4">Doctor</h3>
+            <div class="relative">
+              <!-- Connector line for larger screens -->
+              <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-200 -translate-y-1/2"></div>
+              <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    1</div>
+                  <p class="font-semibold text-slate-700">Pre-Med Education</p>
+                  <p class="text-sm text-slate-500">Complete a Bachelor's degree with pre-med coursework.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    2</div>
+                  <p class="font-semibold text-slate-700">Medical School</p>
+                  <p class="text-sm text-slate-500">Earn a Doctor of Medicine (MD) or Doctor of Osteopathic Medicine
+                    (DO) degree.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    3</div>
+                  <p class="font-semibold text-slate-700">Residency</p>
+                  <p class="text-sm text-slate-500">Complete a specialized residency program (3-7 years).</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center">
+                  <div
+                    class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl font-bold mb-2 border-4 border-white shadow">
+                    ⚕️</div>
+                  <p class="font-semibold text-slate-700">Licensure & Practice</p>
+                  <p class="text-sm text-slate-500">Obtain state medical license and begin practicing, potentially
+                    pursuing fellowships.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Post-Retirement Pathways Section -->
+    <section id="post-retirement-pathways" class="mt-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-slate-800 mb-8 text-center">
+          🌱 Planning for What's Next: Post-Retirement Careers
+        </h2>
+        <div class="space-y-8 max-w-4xl mx-auto text-slate-600">
+
+          <div>
+            <h3 class="text-xl font-semibold text-blue-700 mb-2">Software Engineer: The Mentor & Architect</h3>
+            <p>Leverage decades of experience by transitioning into part-time consulting, mentoring startups, or
+              teaching at a coding bootcamp. Many retired engineers find fulfillment contributing to open-source
+              projects or building niche software products without the pressure of deadlines.</p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-amber-700 mb-2">Entrepreneur: The Advisor & Investor</h3>
+            <p>A successful business requires a solid exit strategy. This is your retirement plan. Options include
+              selling the company, passing it to the next generation (succession planning), or transitioning it into a
+              source of passive income. Post-retirement, you can serve as a board advisor, angel investor, or mentor for
+              aspiring entrepreneurs.</p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-red-700 mb-2">Cybersecurity Engineer: The Digital Guardian</h3>
+            <p>The need for security expertise never fades. Seasoned professionals can work as virtual CISOs (Chief
+              Information Security Officers) for smaller companies, conduct security audits, or develop training
+              programs. This provides a flexible way to keep skills sharp and protect organizations.</p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-purple-700 mb-2">UI Designer: The Creative Consultant</h3>
+            <p>Experienced designers are valued for their strategic eye. Post-retirement roles often involve freelance
+              consulting on high-level design strategy, mentoring junior designers, or creating and selling digital
+              assets like UI kits and templates. This allows for continued creative expression with greater autonomy.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-teal-700 mb-2">Civil Servant: The Community Leader</h3>
+            <p>A career in public service builds a deep understanding of community needs. Many retired civil servants
+              continue to serve by running for local office, joining non-profit boards, or consulting for government
+              contractors. This path allows you to leverage your institutional knowledge for public good.</p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-sky-700 mb-2">Nurse: The Care Consultant</h3>
+            <p>Leverage decades of patient care experience by transitioning to part-time health consulting, patient
+              advocacy, or teaching nursing students. Many retired nurses find fulfillment in community health
+              initiatives, medical writing, or volunteering their expertise.</p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold text-emerald-700 mb-2">Doctor: The Medical Sage</h3>
+            <p>Offer invaluable medical expertise as a consultant, serve on hospital or medical association boards, or
+              engage in medical research. Many doctors transition to teaching, writing medical articles, or volunteering
+              in underserved communities, continuing to impact health without the full-time demands of practice.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <footer class="mt-12 py-6 text-center text-slate-500 text-sm">
+      <p>
+        <strong>Disclaimer:</strong> The career tips provided on this platform are for informational purposes only and
+        do not constitute professional advice.
+        Always consult with a qualified career counselor, financial advisor, or other relevant professional for advice
+        tailored to your specific situation.
+        We make no representations or warranties of any kind, express or implied, about the completeness, accuracy,
+        reliability, suitability, or availability with respect to the information contained herein.
+      </p>
+    </footer>
+  </div>
+
+  <!-- 5. Main Application JavaScript -->
+  <script>
+    // Wait for the DOM to be fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // --- DATA SOURCE ---
+      // To add more tips, just add a new object to this array.
+      const careerTips = [
+        {
+          id: 1,
+          title: "Tailor Your Resume and Cover Letter",
+          category: "Job Application",
+          content: "Don't use a generic resume. Customize it to match the keywords and requirements listed in the job description. This shows the employer you've done your research.",
+        },
+        {
+          id: 2,
+          title: "Build a Strong Online Presence",
+          category: "Networking",
+          content: "Maintain an updated LinkedIn profile. If you're in a tech or creative field, a personal portfolio or GitHub profile can showcase your work.",
+        },
+        {
+          id: 3,
+          title: "Practice the STAR Method",
+          category: "Interviewing",
+          content: "When asked behavioral questions ('Tell me about a time when...'), answer using the STAR method: Situation, Task, Action, and Result.",
+        },
+        {
+          id: 4,
+          title: "Network Actively",
+          category: "Networking",
+          content: "Build genuine relationships with peers, mentors, and industry leaders. Informational interviews are a great way to learn and connect without the pressure of asking for a job.",
+        },
+        {
+          id: 5,
+          title: "Always Be Learning",
+          category: "Career Growth",
+          content: "Your industry is always evolving. Dedicate time to learning new skills, earning certifications, or reading industry news. This keeps you valuable and adaptable.",
+        },
+        {
+          id: 6,
+          title: "Ask for Constructive Feedback",
+          category: "Performance",
+          content: "Don't wait for your annual review. Proactively ask for feedback from your manager and trusted peers after projects. This shows initiative and helps you grow faster.",
+        },
+        {
+          id: 7,
+          title: "Understand Your 'Why'",
+          category: "Career Planning",
+          content: "Know your core values and what motivates you. This 'why' will act as your compass when making difficult career decisions or choosing between opportunities.",
+        },
+        {
+          id: 8,
+          title: "Document Your Wins",
+          category: "Performance",
+          content: "Keep a running list of your accomplishments, successful projects, and positive feedback. This is invaluable for performance reviews and resume updates.",
+        },
+        {
+          id: 9,
+          title: "Set Clear Boundaries",
+          category: "Work-Life Balance",
+          content: "Define your working hours and stick to them when possible. Turn off notifications after hours to truly disconnect and recharge. This prevents burnout.",
+        },
+        {
+          id: 10,
+          title: "Send Thank-You Notes",
+          category: "Interviewing",
+          content: "After an interview, send a prompt and personalized thank-you email (within 24 hours) to each person you spoke with. It reiterates your interest and professionalism.",
+        },
+        {
+          id: 11,
+          title: "Broaden Your Networking Horizons",
+          category: "Networking",
+          content: "Actively broaden your professional circle. Attend events like alumni meetings, university seminars, business conventions, hackathons, and industry mixers. Don't hesitate to ask friends or family to be a 'plus one' to relevant events. Furthermore, build an online community by sharing your skills and engaging with others; this can open unexpected doors.",
+        },
+        {
+          id: 12,
+          title: "Invest in New Skills for a Career Move",
+          category: "Career Planning",
+          content: "If you are looking to make a significant career move, consider learning a new, in-demand skill. This may involve formal education, certifications, or returning to school, but it positions you as a strong candidate for new opportunities."
+        },
+        {
+          id: 13,
+          title: "Search Both Internally and Externally",
+          category: "Job Application",
+          content: "When you're ready for a new role, don't overlook internal positions at your current company. Applying internally while also searching externally can significantly increase the odds of finding a great fit."
+        },
+        {
+          id: 14,
+          title: "Prioritize Your Local Job Search",
+          category: "Job Application",
+          content: "Begin your search by applying to local jobs. Companies often view local candidates favorably as it simplifies commutes and eliminates the need for relocation assistance, which can be a hiring advantage for you."
+        },
+        {
+          id: 15,
+          title: "Reverse-Engineer Your Dream Job",
+          category: "Career Planning",
+          content: "Find several job postings for your dream role. Analyze the required skills, education, and years of experience. Use this as a blueprint to build a clear plan and identify any skill gaps you need to fill."
+        },
+        {
+          id: 16,
+          title: "Conduct Informational Interviews",
+          category: "Networking",
+          content: "Do you know someone who works in your target industry? Reach out and ask them for a brief chat about their experience. This provides invaluable insights and expands your professional network."
+        },
+        {
+          id: 17,
+          title: "Explore Diverse Job Sectors",
+          category: "Job Application",
+          content: "Broaden your search beyond the private sector. Consider applying for roles in non-profits, state or federal government, and even international positions, which often offer unique experiences and stability."
+        },
+        {
+          id: 18,
+          title: "Leverage Your Language Skills",
+          category: "Job Application",
+          content: "If you are multi-lingual, create different versions of your resume written in the languages you know. This is a significant advantage, especially when applying for international or global-facing roles."
+        },
+        {
+          id: 19,
+          title: "Cultivate a Growth Mindset",
+          category: "Career Growth",
+          content: "Embrace challenges, persist through setbacks, and see effort as a path to mastery. Believing you can develop your abilities (a growth mindset) is key to long-term success."
+        },
+        {
+          id: 20,
+          title: "Volunteer for Strategic Exposure",
+          category: "Career Growth",
+          content: "Consider volunteering for different types of work or cross-departmental projects. This can provide valuable exposure to other parts of the business and demonstrate your initiative."
+        }
+      ];
+
+      // Sort the tips alphabetically by title by default
+      careerTips.sort((a, b) => a.title.localeCompare(b.title));
+
+      // --- STYLING HELPER ---
+      const categoryColors = {
+        "Job Application": { colors: "bg-blue-100 text-blue-800", emoji: "📄 👨🏿‍🦱 📄" },
+        "Networking": { colors: "bg-green-100 text-green-800", emoji: "👩🏾‍🦱 🤝🏿 👨🏿‍" },
+        "Interviewing": { colors: "bg-indigo-100 text-indigo-800", emoji: "🎤 👨🏿‍🦱 👍🏿" },
+        "Career Growth": { colors: "bg-amber-100 text-amber-800", emoji: "📈 👩🏾‍🦱 📈" },
+        "Performance": { colors: "bg-pink-100 text-pink-800", emoji: "🏆 👩🏾‍🦱 🏆" },
+        "Work-Life Balance": { colors: "bg-purple-100 text-purple-800", emoji: "✌🏾 🧘🏾‍♀️ ✌🏾" },
+        "Career Planning": { colors: "bg-cyan-100 text-cyan-800", emoji: "🗺️ 👩🏾‍🦱 🗺️" },
+        "default": { colors: "bg-slate-100 text-slate-800", emoji: "💡 👩🏾‍🦱 💡" },
+      };
+
+      // --- APPLICATION STATE ---
+      let searchTerm = '';
+      let selectedCategory = 'All';
+
+      // --- DOM ELEMENT REFERENCES ---
+      const searchInput = document.getElementById('search-input');
+      const categoryContainer = document.getElementById('category-filters');
+      const tipsGrid = document.getElementById('tips-grid');
+      const noResultsMessage = document.getElementById('no-results');
+
+      // --- RENDER FUNCTIONS ---
+
+      /**
+       * Renders the filter buttons based on available categories
+       */
+      function renderCategoryButtons() {
+        // 'All' is first, then the unique categories sorted
+        const categories = ['All', ...new Set(careerTips.map(tip => tip.category).sort())];
+        let buttonsHTML = '';
+
+        categories.forEach(category => {
+          const isActive = selectedCategory === category;
+          const categoryInfo = categoryColors[category] || categoryColors.default;
+
+          let activeClass, inactiveClass;
+
+          if (category === 'All') {
+            activeClass = 'bg-blue-600 text-white shadow-md';
+            inactiveClass = 'bg-slate-200 text-slate-700 hover:bg-slate-300';
+          } else {
+            // Use category colors for active state, gray for inactive
+            activeClass = `${categoryInfo.colors} shadow-md font-bold scale-105`;
+            inactiveClass = 'bg-slate-200 text-slate-700 hover:bg-slate-300';
+          }
+
+          buttonsHTML += `
+            <button
+              data-category="${category}"
+              class="filter-btn px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 transform ${isActive ? activeClass : inactiveClass}"
+            >
+              ${category === 'All' ? '🌟 All' : `${categoryInfo.emoji} ${category}`}
+            </button>
+          `;
+        });
+
+        categoryContainer.innerHTML = buttonsHTML;
+
+        // Add event listeners to the newly created buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedCategory = btn.dataset.category;
+            renderTips();
+            updateCategoryButtonsUI();
+          });
+        });
+      }
+
+      /**
+       * Updates the visual state (active/inactive) of filter buttons
+       */
+      function updateCategoryButtonsUI() {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          const category = btn.dataset.category;
+          const isActive = selectedCategory === category;
+          const categoryInfo = categoryColors[category] || categoryColors.default;
+
+          let activeClass, inactiveClass;
+
+          if (category === 'All') {
+            activeClass = 'bg-blue-600 text-white shadow-md';
+            inactiveClass = 'bg-slate-200 text-slate-700 hover:bg-slate-300';
+          } else {
+            activeClass = `${categoryInfo.colors} shadow-md font-bold scale-105`;
+            inactiveClass = 'bg-slate-200 text-slate-700 hover:bg-slate-300';
+          }
+
+          if (isActive) {
+            btn.classList.Add(...activeClass.split(' '));
+            btn.classList.remove(...inactiveClass.split(' '));
+          } else {
+            btn.classList.add(...inactiveClass.split(' '));
+            btn.classList.remove(...activeClass.split(' '));
+          }
+        });
+      }
+
+      /**
+       * Filters and renders the list of tip cards
+       */
+      function renderTips() {
+        const term = searchTerm.toLowerCase();
+
+        // 1. Filter the tips based on state
+        const filteredTips = careerTips
+          .filter(tip => {
+            // Category filter
+            return selectedCategory === 'All' || tip.category === selectedCategory;
+          })
+          .filter(tip => {
+            // Search term filter
+            return (
+              tip.title.toLowerCase().includes(term) ||
+              tip.content.toLowerCase().includes(term)
+            );
+          });
+
+        // 2. Show/hide the "No Results" message
+        if (filteredTips.length === 0) {
+          tipsGrid.innerHTML = ''; // Clear the grid
+          noResultsMessage.classList.remove('hidden');
+        } else {
+          noResultsMessage.classList.add('hidden');
+
+          // 3. Generate and render the HTML for the tips
+          let tipsHTML = '';
+          filteredTips.forEach(tip => {
+            const categoryInfo = categoryColors[tip.category] || categoryColors.default;
+            const colorClass = categoryInfo.colors;
+            const emoji = categoryInfo.emoji;
+
+            tipsHTML += `
+              <div class="tip-card bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 hover:shadow-2xl">
+                <div class="p-6">
+                  <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4 uppercase tracking-wider ${colorClass}">
+                    ${emoji} ${tip.category}
+                  </span>
+                  <h3 class="text-xl font-bold text-slate-800 mb-3">${tip.title}</h3>
+                  <p class="text-slate-600 text-base leading-relaxed">${tip.content}</p>
+                </div>
+              </div>
+            `;
+          });
+
+          tipsGrid.innerHTML = tipsHTML;
+        }
+      }
+
+      // --- EVENT LISTENERS ---
+
+      // Listen for input in the search bar
+      searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value;
+        renderTips(); // Re-render on every keystroke
+      });
+
+      // --- INITIAL APP RENDER ---
+      renderCategoryButtons();
+      renderTips();
+
+    });
+  </script>
+</body>
+
+</html>
